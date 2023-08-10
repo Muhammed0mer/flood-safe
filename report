@@ -1,0 +1,46 @@
+Satellite imagery namely a digital elevation model (DEM) will be used of areas to be
+mapped. A catchment area will be identified where rainfall causes water flow in our area.
+The water flow and so flooding will then be modelled and simulated in the DEM so areas at
+risk of inundation are identified and flagged as such so residential, agricultural and
+commercial activities are avoided there.
+
+So, first of all we would obviously need to source our digital elevation model from some source. There are several criteria which any chosen DEM source should satisfy. Firstly, it should be precise and accurate. Precision in digital elevation models is measured through the resolution metric in the units of metres. Hence, a resolution of 100 m would mean that altitude measurements are precise to a 100 square metres box in a grid of such boxes. Such a grid makes up a digital elevation model.
+
+Accuracy is another property which means with how much confidence can we use the digital elevation model. So, ideally accuracy would mean that if the DEM indicates an altitude of say 1000m in a pixel, it actually means 1000m. But in practice DEMs usually have limited accuracy which has to be considered when selecting a DEM.
+
+Another criterion in selecting a digital elevation model has been obviously the coverage of the imagery. Since, our main requirement for the project was modelling flooding in Pakistan, our main priority was a precise DEM with full coverage of the country. However, we also considered the extent of global coverage of the imagery as a bonus as it could help us in potentially scaling up our project in the future.
+
+The digital elevation model we found to satisfy adequately all these criteria was the one provided by....
+
+Conditioning the DEM
+
+Digital elevation models often have several types of errors in the data. While many errors would produce minimal effects for our particular application, some could cause significant distortions in the results. An example is the presence of pits in the DEM data. These are sudden depressions in the otherwise gradually changing data and is often the result of errors. However, what concerns us is that these often lead to inconsistencies in water flow networks which can lead to enormous diversions in the results. Hence, it is important to first 'fill in' these pits before actually using the DEM.
+
+Another common error in DEMs are depressions and flats where the terrain usually stays constant for some while leading to erroneous results. These also have to be corrected.
+
+Computing Flow Directions
+
+The next step in the process flow for our project is to model flowing water in our DEM. To do this, we take each cell in the DEM and find out the gradient difference from neighbouring cells. Using the fact thatt water always flows along a negative gradient, for each cell we resolve the flow directions (if water were to be end up on the cell) to any of the neighbouring cell. For simplying calculations, we take the eight compass directions North, North-East, East, South-East, South, South-West, West and North-West (at angles of 0°, 45°, 90°, 135°, 180°, 225°, 270° and 315° respectively). This step gives us an array of cells having a flow direction from any of these, depending on which is nearest to the actual.
+
+Computing Flow Accumulation
+
+Here, we identify flow directions which successively follow each other. Along such identified paths, we accumulate a sum along each path. This gives an array of accumulations which help identify streams of water flow in our DEM.
+
+Delineating Catchments
+
+A pour point or multiple pour points are identified on the DEM. This is the outlet of each watershed within the DEM identified from being the lowest point in that watershed.
+
+Using that pour point, we trace every stream contributing to it backwards until we identify the total area of the DEM which goes into the pour point. This area is called the catchment or watershed and is identifying it is necessary to know the where the water from precipitation flows to.
+
+Estimating Flood inundation with HAND
+
+HAND or Height Above Nearest Drainage is an estimation technique used to predict flooding. This step produces a grid of each watershed cell's height from the nearest cell which is lowest in height.
+
+A cell which is higher than its neighbours is less likely to be flooded than a cell which is less higher or lower.
+
+Flood Inundation Map
+
+All of the steps, result in a flood inundation map overlay which can be put on top a visible satellite image to get an idea of the actual areas which would be flooded.
+
+As part of our project, we intend to publish these maps on a suitable website so it can be used for flood prediction by everyone.
+

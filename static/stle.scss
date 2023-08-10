@@ -1,0 +1,60 @@
+$red-theme:navy;
+body{
+    font: 1.2em Georgia, 'Times New Roman', times, serif;
+    background-color: #fff;
+    color: #000000;
+    margin: 8px;
+    a{color:$red-theme;}
+}
+#flag{
+    
+    background-color: $red-theme;
+    display: inline;
+    width: auto;
+    height: 20px;
+}
+
+img[onclick]{
+    float:left;
+    border: 4px $red-theme solid;
+}
+a[href='index.html']{
+    font-size: 3em;
+    color:black;
+    text-decoration:none;
+}
+img[alt~='Illustration']{
+    float:left;
+    border: 6px $red-theme double;
+}
+p[lang|="fr"]{
+    color: black;
+}
+p[lang|="en"]{
+    color: #999;
+}
+#navbar-upper{
+    font-family: sans-serif; font-size: 16pt;
+    float: right;
+}
+.navbar-main ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+.navbar-main{
+    display: block;
+    height: fit-content;
+    background-color: rgb(0, 15, 99);
+  }
+.navbar-main li{
+    float: left;
+}
+.navbar-main li a{
+    font-family: 'DM Serif Text', serif;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    padding: 10% 15%;
+}

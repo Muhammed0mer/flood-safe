@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Journal</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="stle.css">
+        <link rel="stylesheet" href="owlcarousel/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="owlcarousel/assets/owl.theme.default.min.css">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <script src="jquery.js"></script>
+        <script src="owlcarousel/owl.carousel.min.js"></script>
+        
+        
+    </head>
+    <body>
+        <div id="nicewrapper">
+
+            <a id="cover-title" onclick="menu_func()">Cover</a>
+
+            <nav id="navbar-upper">
+                <a href="#">Login as editor</a> |
+                <a href="#">Contact</a>
+            </nav>
+
+            <a id="menubtn" href="javascript:void(0);" onclick="menu_func()"><img src="menu_black_24dp.svg" alt="menu button"></a>
+            <script>
+                console.log("gh");
+                function menu_func(){
+                    console.log("strt");
+                    var navbar=document.getElementById("inavbar-main");
+                    if (navbar.className === "navbar-main"){
+                        navbar.className+=" vertical";
+                        console.log("vert");
+                    }
+                    else{
+                        navbar.className="navbar-main";
+                        console.log("no vert");
+                        
+                    }
+                }
+                
+                    $(document).ready(function(){ 
+                        $("#inavbar-main>ul>li").click(function(){
+                            var x = window.matchMedia("(max-width: 700px)");            
+                            if (x.matches){ 
+                        console.log($(this).children("ul").css("display"));
+                        if($(this).children("ul").css("display")==="none"){
+                            $(this).children("ul").css("display","block");
+                        }
+                        else{
+                            $(this).children("ul").css("display","none");
+                        }
+                    }})})
+            </script>
+            <nav id = "inavbar-main" class="navbar-main">
+                <ul>
+                    <li><a href="http://journal.pec.org.pk/index.html">Home</a></li>
+                    <li id="menu2"><a>Explore issues</a><img class="navbar-icon" src="arrow_drop_down_white_24dp.svg">
+                            <ul>
+                        
+                                <li><a>Browse all issues</a></li>
+                            </ul>
+                    </li>
+                    <li id="menu3"><a>About the Journal</a><img class="navbar-icon" src="arrow_drop_down_white_24dp.svg" >
+                        <ul>
+                            <li><a href="http://journal.pec.org.pk/Editorial_Board.html">About the editors</a></li>
+                            <li><a href=http://journal.pec.org.pk/Advisory_Board.html"">Journal advisory team</a></li>
+                            <li><a href="http://journal.pec.org.pk/Reviewers_Panel.html">Expert review staff</a></li>
+                            <li><a href="http://journal.pec.org.pk/Contact.html">Contact</a></li>
+                            <li><a href="http://journal.pec.org.pk/Editorial_Procedure.html">Editorial process</a></li>
+                            <li><a href=http://journal.pec.org.pk/Publication_Procedure.html"">Publishing process</a></li>
+                            <li><a href="http://journal.pec.org.pk/Publication_Ethics.html">Publication Ethics & Malpractice Statement</a></li>
+                        </ul>
+                    </li>
+                    <li id="menu4"><a>Publish with us</a><img class="navbar-icon" src="arrow_drop_down_white_24dp.svg" >
+                    <ul>
+                        <li><a href="http://journal.pec.org.pk/Guideline_to_Authors.html">Guidelines for Authors</a></li>
+                        <li><a href="http://journal.pec.org.pk/index.jsp">Submit manuscript online</a></li>
+                        <li><a href="http://journal.pec.org.pk/editor_pecj.jsp">For editors</a></li>
+                    </ul>
+                    </li>
+                    <li id="login-linkbox">
+                        <a href="http://journal.pec.org.pk/index.jsp">Login</a>
+                        <img class ="navbar-icon" src="account_circle_white_24dp.svg">
+                    </li>
+                </ul>
+                
+            </nav>
+        
+        <div class="owl-carousel owl-theme" id ="car">
+            <div><img src="fer/swedenmark.jpg" alt=""></div>   
+            <div><img src="fer/net.jpg" alt=""><a class="caption">forza ferrari</a></div>
+            <div><img src="fer/15jul.jpg" alt=""></div>
+            <div><img src="fer/blackholes.jpg" alt=""></div>
+            <div><img src="fer/FO39a36XsAQO26o.jpeg" alt=""></div>
+
+        </div>
+
+        <script>
+            $(document).ready(function(){
+                $(".owl-carousel").owlCarousel({
+                    loop:true,
+                    margin:10,
+                    nav:false,
+                    items:1,
+                    center:true
+                    }
+                );
+            });
+        </script>
+        <a>&#9776</a>
+        </div>
+    </body>
+</html>
